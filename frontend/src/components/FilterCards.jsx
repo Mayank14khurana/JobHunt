@@ -1,29 +1,28 @@
-import React, { useState } from 'react';
+import { setSearchedQuery } from '@/redux/slices/jobSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 const filterData = [
   {
     filterType: "Location",
-    array: ["Delhi NCR", "Bangalore", "Hyderabad", "Pune", "Mumbai"]
+    array: ["Delhi", "Bangalore", "Hyderabad", "Pune", "Mumbai"]
   },
   {
     filterType: "Industry",
-    array: ["Frontend Developer", "Backend Developer", "FullStack Developer"]
+    array: ["Frontend Developer", "Backend Developer", "Full Stack Developer"]
   },
-  {
-    filterType: "Salary",
-    array: ["0-40K", "42K-1lakh", "1lakh-5lakh"]
-  }
+  
 ];
 
 const FilterCards = () => {
-  const [selectedFilters, setSelectedFilters] = useState({});
-  
-  const handleChange = (filterType, value) => {
-    setSelectedFilters(prev => ({
-      ...prev,
-      [filterType]: value
-    }));
-  };
+  const [selectedFilters, setSelectedFilters] = useState('');
+  const dispatch =useDispatch();
+  useEffect(()=>{
+    dispatch(setSearchedQuery(selectedFilters));
+  },[selectedFilters,dispatch])
+  const handleChange = (value) => {
+     setSelectedFilters(value);
+  }; 
 
   return (
     <div>
@@ -37,10 +36,10 @@ const FilterCards = () => {
               <label key={itemIndex} className="flex items-center cursor-pointer mt-2">
                 <input
                   type="radio"
-                  name={data.filterType}
+                  name="filter"
                   value={item}
-                  checked={selectedFilters[data.filterType] === item}
-                  onChange={() => handleChange(data.filterType, item)}
+                  checked={selectedFilters === item}
+                  onChange={() => handleChange(item)}
                   className="mr-2 form-radio text-blue-600 focus:ring-blue-500"
                 />
                 <span className="text-md">{item}</span>
@@ -54,3 +53,4 @@ const FilterCards = () => {
 };
 
 export default FilterCards;
+
