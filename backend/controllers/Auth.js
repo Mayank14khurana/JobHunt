@@ -143,7 +143,6 @@ exports.login = async (req, res) => {
                 message: "All fields are necessary"
             });
         }
-
        
         const user = await User.findOne({ email });
         if (!user) {

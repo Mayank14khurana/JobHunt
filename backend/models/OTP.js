@@ -18,7 +18,7 @@ const otpSchema = new mongoose.Schema({
 })
 async function  sendVerificationMail(email,otp) {
     try{
-        const mailResponse = await mailSender(email,"Verification Mail " ,` Welcome the otp required to complete the process is ${otp}`);
+        const mailResponse = await mailSender(email,"Verification Mail " ,` Welcome, the otp required to complete the process is ${otp}`);
         console.log("Email", mailResponse);
     }catch(err){
         console.log("Error while sending verification mail",err);
