@@ -16,7 +16,7 @@ const JobDescription = () => {
     const [isApplied,setIsApplied]=useState(isInitiallyApplied);
     const applyJobHandler= async ()=>{
            try{
-            const res=await fetch(`http://localhost:4000/api/v1/application/apply/${jobId}`,
+            const res=await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/application/apply/${jobId}`,
                 {
                     method:"GET",
                     credentials:"include"
@@ -36,7 +36,7 @@ const JobDescription = () => {
     useEffect(() => {
         const fetchSingleJob = async () => {
             try {
-                const res = await fetch(`http://localhost:4000/api/v1/jobs/get/${jobId}`, {
+                const res = await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/jobs/get/${jobId}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

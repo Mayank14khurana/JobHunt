@@ -9,7 +9,7 @@ const useGetAllCompany = () => {
     useEffect(() => {
         const fetchAllCompany = async () => {
             try {
-                const res = await fetch(`http://localhost:4000/api/v1/company/get`, {
+                const res = await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/company/get`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

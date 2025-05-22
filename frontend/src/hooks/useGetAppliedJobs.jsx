@@ -1,5 +1,5 @@
 import { setAllAppliedJobs } from '@/redux/slices/jobSlice'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 const useGetAppliedJobs = () => {
@@ -7,7 +7,7 @@ const useGetAppliedJobs = () => {
      useEffect(()=>{
          const fetchAllAppliedJobs=async ()=>{
           try{
-                const res =await fetch(`http://localhost:4000/api/v1/application/get`,{
+                const res =await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/application/get`,{
                     method:"GET",
                     credentials:'include'
                 })

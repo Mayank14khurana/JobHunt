@@ -43,7 +43,7 @@ const UpdateProfile = ({ open, setOpen }) => {
         }
 
         try {
-            const res = await fetch('http://localhost:4000/api/v1/user/profile/update', {
+            const res = await fetch('https://jobhunt-backend-hfqi.onrender.com/api/v1/user/profile/update', {
                 method: 'PUT',
                 credentials: 'include',
                 body: formData,

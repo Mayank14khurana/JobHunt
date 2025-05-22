@@ -10,7 +10,7 @@ const GetOtp = () => {
     async function submitHandler(e) {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:4000/api/v1/user/getotp', {
+            const response = await fetch('https://jobhunt-backend-hfqi.onrender.com/api/v1/user/getotp', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
