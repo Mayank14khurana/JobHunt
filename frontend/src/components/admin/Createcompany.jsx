@@ -11,7 +11,7 @@ const Createcompany = () => {
     const dispatch=useDispatch();
     const registerNewCompany=async ()=>{
          try{
-               const res=await fetch('https://jobhunt-backend-hfqi.onrender.com/api/v1/company/register',{
+               const res=await fetch('http://localhost:4000/api/v1/company/register',{
                 method:"POST",
                 body:JSON.stringify({companyName}), 
                 headers: {

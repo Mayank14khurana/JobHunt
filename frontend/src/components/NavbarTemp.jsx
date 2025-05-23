@@ -22,7 +22,7 @@ const NavbarTemp = () => {
 
   const logoutHandler= async ()=>{
     try{
-     const res =await fetch('https://jobhunt-backend-hfqi.onrender.com/api/v1/user/logout',{
+     const res =await fetch('http://localhost:4000/api/v1/user/logout',{
       method:'GET'
      });
      if(res.ok){

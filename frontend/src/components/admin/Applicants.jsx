@@ -15,7 +15,7 @@ const Applicants = () => {
     useEffect(()=>{
     const fetchAllApplicants= async ()=>{
         try{
-        const res=await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/application/${params.id}/applicants`,{
+        const res=await fetch(`http://localhost:4000/api/v1/application/${params.id}/applicants`,{
             method:"GET",
             credentials:'include'
         })

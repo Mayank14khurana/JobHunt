@@ -10,7 +10,7 @@ const ApplicantsTable = () => {
 
     const statusHandler = async (status, id) => {
         try {
-            const res = await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/application/status/${id}/update`, {
+            const res = await fetch(`http://localhost:4000/api/v1/application/status/${id}/update`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

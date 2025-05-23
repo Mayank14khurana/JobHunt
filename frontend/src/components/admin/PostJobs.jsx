@@ -28,7 +28,7 @@ const PostJobs = () => {
     async function submitHandler(e) {
         e.preventDefault();
         try{
-            const res=await fetch('https://jobhunt-backend-hfqi.onrender.com/api/v1/jobs/post',{
+            const res=await fetch('http://localhost:4000/api/v1/jobs/post',{
                 method:"POST",
                 credentials:'include',
                 headers: {

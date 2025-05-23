@@ -37,7 +37,7 @@ const CompanySetup = () => {
        formData.append("location",data.location);
        formData.append("file",data.file);
        try{
-        const res=await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/company/update/${reqId}`,{
+        const res=await fetch(`http://localhost:4000/api/v1/company/update/${reqId}`,{
             method:"PUT",
             credentials:"include",
             

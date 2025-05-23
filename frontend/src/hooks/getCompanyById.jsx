@@ -1,5 +1,6 @@
+import React from 'react';
 import { setSingleCompany } from '@/redux/slices/companySlice';
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 
@@ -9,7 +10,7 @@ const getCompanyById = (companyId) => {
     useEffect(() => {
         const fetchSingleCompany = async () => {
             try {
-                const res = await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/company/get/${companyId}`, {
+                const res = await fetch(`http://localhost:4000/api/v1/company/get/${companyId}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

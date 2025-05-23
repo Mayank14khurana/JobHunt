@@ -39,7 +39,7 @@ const Signup = () => {
                 formData.append('file', file);
             }
 
-            const response = await fetch('https://jobhunt-backend-hfqi.onrender.com/api/v1/user/signup', {
+            const response = await fetch('http://localhost:4000/api/v1/user/signup', {
                 method: "POST",
                 body: formData,
             });

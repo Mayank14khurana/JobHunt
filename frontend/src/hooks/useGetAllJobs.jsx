@@ -8,7 +8,7 @@ const useGetAllJobs = () => {
     useEffect(() => {
         const fetchAllJobs = async () => {
             try {
-                const res = await fetch(`https://jobhunt-backend-hfqi.onrender.com/api/v1/jobs/getAll?keyword=${searchedQuery}`, {
+                const res = await fetch(`http://localhost:4000/api/v1/jobs/getAll?keyword=${searchedQuery}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
